@@ -2,8 +2,8 @@ import java.util.Arrays;
 
 public class Q34_Find_first_and_last_position_of_element_in_sorted_array {
     public static void main(String[] args) {
-        int[] arr = {2, 3, 1, 1, 7, 8};
-        System.out.println(Arrays.toString(searchRange2(arr, 1)));
+        int[] arr = {1, 3, 5, 7, 7, 7, 7, 9, 11};
+        System.out.println(Arrays.toString(searchRange2(arr, 7)));
     }
 
     //this is the brute force approach for this question.
@@ -50,7 +50,7 @@ public class Q34_Find_first_and_last_position_of_element_in_sorted_array {
         int end = nums.length-1;
 
         while(start <= end) {
-            int mid = start = (end-start)/2;
+            int mid = start + (end-start)/2;
             if(target < nums[mid]) {
                 end = mid - 1;
             } else if(target > nums[mid]) {
